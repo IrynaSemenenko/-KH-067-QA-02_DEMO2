@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<!--<suite name="WishlistSuit" verbose="1">-->
+<!--    <test name="Regression">-->
+<!--&lt;!&ndash;        <groups>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        </groups>&ndash;&gt;-->
+<!--        <classes>-->
+
+<!--            <class name="WishListTest"/>-->
+
+<!--        </classes>-->
+<!--    </test>-->
+<!--</suite>-->
