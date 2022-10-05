@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="ProjectModuleManager">
-    <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/-KH-067-QA-02_DEMO2.iml" filepath="$PROJECT_DIR$/.idea/-KH-067-QA-02_DEMO2.iml" />
-      <module fileurl="file://$PROJECT_DIR$/PromUa_Automation/PromUa_Automation.iml" filepath="$PROJECT_DIR$/PromUa_Automation/PromUa_Automation.iml" />
-    </modules>
-  </component>
-</project>
