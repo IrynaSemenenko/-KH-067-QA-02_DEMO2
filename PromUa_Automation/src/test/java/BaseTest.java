@@ -14,12 +14,13 @@ import java.time.format.DateTimeFormatter;
 
 public class BaseTest implements ITestListener {
     WebDriver driver;
-
+    public static final String MAIN_PAGE_URL = "https://prom.ua/";
     @BeforeMethod
     public void initDriver() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.get(MAIN_PAGE_URL);
 //        driver.manage().deleteAllCookies();
     }
 
@@ -38,5 +39,4 @@ public class BaseTest implements ITestListener {
         }
         driver.quit();
     }
-
 }
