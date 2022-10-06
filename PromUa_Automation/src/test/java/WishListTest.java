@@ -16,16 +16,14 @@ public class WishListTest extends BaseTest {
     }
 
     @Test
-    public void addProductToWishlist() {
+    public void addProductsToWishlist() {
         wishListPage = new WishListPage(driver);
         loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
         headerPage = new HeaderPage(driver);
         loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
-//        homePage.clickProduct();
-        homePage.clickFavoriteButton();
+        homePage.clickFavoriteButtons();
         headerPage.clickFavoriteButton();
-
     }
 
     @Test
