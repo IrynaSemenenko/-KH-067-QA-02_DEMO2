@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="PromUa_Automation"
+           tests="1"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="7,870">
+    <properties></properties>
+
+
+
+            <testcase
+                name="addProductToWishlist"
+                time="7,870"
+                classname="WishListTest">
+            </testcase>
+</testsuite>

@@ -9,19 +9,22 @@ import org.testng.annotations.BeforeMethod;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class BaseTest implements ITestListener {
-    WebDriver driver;
     public static final String MAIN_PAGE_URL = "https://prom.ua/";
+    WebDriver driver;
+
     @BeforeMethod
     public void initDriver() {
         System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get(MAIN_PAGE_URL);
-//        driver.manage().deleteAllCookies();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().deleteAllCookies();
     }
 
     @AfterMethod(alwaysRun = true)
@@ -37,6 +40,6 @@ public class BaseTest implements ITestListener {
                 e.printStackTrace();
             }
         }
-        driver.quit();
+//        driver.quit();
     }
 }
