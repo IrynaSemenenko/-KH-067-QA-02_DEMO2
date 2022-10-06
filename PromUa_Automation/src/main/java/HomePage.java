@@ -17,35 +17,21 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
-    public void clickFavoriteButton() {
-//        wait.until(ExpectedConditions.presenceOfElementLocated(favoriteButtons));
+    public void clickFavoriteButtons() {
         Actions actions = new Actions(driver);
         actions.scrollToElement(driver.findElement(titleForYou)).perform();
-//       wait.until(ExpectedConditions.visibilityOfElementLocated(favoriteButton)).click();
         System.out.println("Check 1");
         wait.until(ExpectedConditions.visibilityOfElementLocated(favoriteButton));
         List<WebElement> listFavoriteButtons = driver.findElements(favoriteButtons);
         for (int i = 0; i < 3; i++) {
             listFavoriteButtons.get(i).click();
         }
-//        System.out.println("Check 2");
-//        System.out.println(listFavoriteButtons.size());
-//        for (WebElement webElement: listFavoriteButtons) {
-//            System.out.println("Check 3");
-//           webElement.click();
-//            System.out.println("Check 4");
-//            try {
-//                Thread.sleep(5);
-//            } catch (InterruptedException e) {
-//                throw new RuntimeException(e);
-//            }
-//        }
     }
 
     public void clickProduct() {
         Actions actions = new Actions(driver);
         actions.scrollToElement(driver.findElement(titleForYou)).perform();
-//        wait.until(ExpectedConditions.visibilityOfElementLocated()).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(product)).click();
     }
 
 }

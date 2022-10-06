@@ -5,14 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class WishListPage extends BasePage{
-    @FindBy(xpath = "//span[@class='_3Trjq OAv5u']")
-    WebElement nameWishListPage;
     By shoppingButton = By.cssSelector(".uTnwV");
+    By nameWishListPageLocator = By.xpath("//span[@class='_3Trjq OAv5u']");
     public WishListPage(WebDriver driver) {
         super(driver);
     }
     public boolean nameWishListPageIsDisplayed() {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//span[@class='_3Trjq OAv5u']")))
+        return wait.until(ExpectedConditions.presenceOfElementLocated(nameWishListPageLocator))
                 .isDisplayed();
     }
     public void clickShoppingButton(){

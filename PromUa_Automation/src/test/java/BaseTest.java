@@ -40,6 +40,6 @@ public class BaseTest implements ITestListener {
                 e.printStackTrace();
             }
         }
-//        driver.quit();
+        driver.quit();
     }
 }

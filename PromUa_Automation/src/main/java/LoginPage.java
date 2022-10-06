@@ -5,42 +5,37 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
-    @FindBy(xpath = "//div[@data-qaid='email_btn']")
-    WebElement emailButton;
-    @FindBy(id = "email_field")
-    WebElement emailField;
-    @FindBy(id = "emailConfirmButton")
-    WebElement submitEmailButton;
-    @FindBy(id = "enterPassword")
-    WebElement passwordField;
-    @FindBy(id = "enterPasswordConfirmButton")
-    WebElement submitPasswordButton;
+    By emailButtonLocator = By.xpath("//div[@data-qaid='email_btn']");
+    By emailFieldLocator = By.id("email_field");
+    By submitEmailButtonLocator = By.id("emailConfirmButton");
+    By passwordFieldLocator = By.id("enterPassword");
+    By submitPasswordButtonLocator = By.id("enterPasswordConfirmButton");
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
     public void clickEmailButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@data-qaid='email_btn']")))
+        wait.until(ExpectedConditions.presenceOfElementLocated(emailButtonLocator))
                 .click();
     }
 
     public void enterEmail(String email) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("email_field")))
+        wait.until(ExpectedConditions.presenceOfElementLocated(emailFieldLocator))
                 .sendKeys(email);
     }
 
     public void enterPassword(String password) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("enterPassword")))
+        wait.until(ExpectedConditions.presenceOfElementLocated(passwordFieldLocator))
                 .sendKeys(password);
     }
 
     public void clickSubmitEmailButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("emailConfirmButton")))
+        wait.until(ExpectedConditions.presenceOfElementLocated(submitEmailButtonLocator))
                 .click();
     }
 
     public void clickSubmitPasswordButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("enterPasswordConfirmButton")))
+        wait.until(ExpectedConditions.presenceOfElementLocated(submitPasswordButtonLocator))
                 .click();
     }
     public void authorizationWithFavoriteButton(String email, String password) { //favorite button in the header

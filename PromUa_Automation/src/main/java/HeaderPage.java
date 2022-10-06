@@ -7,15 +7,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import java.util.List;
 
 public class HeaderPage extends BasePage{
-    @FindBy(xpath = "//button[@data-qaid='favorite_cabinet_button']")
-    WebElement favoriteButton;
     By singInButtonLocator = By.xpath("//button[@data-qaid='sign-in']");
+    By favoriteButton = By.xpath("//button[@data-qaid='favorite_cabinet_button']");
 
     public HeaderPage(WebDriver driver) {
         super(driver);
     }
     public void clickFavoriteButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@data-qaid='favorite_cabinet_button']")))
+        wait.until(ExpectedConditions.presenceOfElementLocated(favoriteButton))
                 .click();
     }
     public void clickSingInButton() {
