@@ -1,41 +1,51 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.ArrayList;
+
 public class WishListTest extends BaseTest {
     WishListPage wishListPage;
     LoginPage loginPage;
     HomePage homePage;
-    HeaderPage headerPage;
+
 
     @Test
     public void goToWishlist() {
-        wishListPage = new WishListPage(driver);
+        homePage = new HomePage(driver);
+        homePage.getHeaderFragment().clickFavoriteButton();
         loginPage = new LoginPage(driver);
-        loginPage.authorizationWithFavoriteButton("irinabublik039@gmail.com", "Ib(0992163097)");
+        loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
+        wishListPage = new WishListPage(driver);
         Assert.assertTrue(wishListPage.nameWishListPageIsDisplayed());
     }
 
     @Test
     public void addProductsToWishlist() {
-        wishListPage = new WishListPage(driver);
-        loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-        headerPage = new HeaderPage(driver);
+        homePage.getHeaderFragment().clickSingInButton();
+        loginPage = new LoginPage(driver);
         loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
         homePage.clickFavoriteButtons();
-        headerPage.clickFavoriteButton();
+        homePage.getHeaderFragment().clickFavoriteButton();
+        wishListPage = new WishListPage(driver);
+        String expectedResult = wishListPage.getCountAddedProduct();
+        String actualResult = wishListPage.getAttributeCounterFavorite();
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
     @Test
     public void shoppingButtonInWishList() {
-        wishListPage = new WishListPage(driver);
-        loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-        loginPage.authorizationWithFavoriteButton("irinabublik039@gmail.com", "Ib(0992163097)");
+        homePage.getHeaderFragment().clickFavoriteButton();
+        loginPage = new LoginPage(driver);
+        loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
+        wishListPage = new WishListPage(driver);
         wishListPage.nameWishListPageIsDisplayed();
         wishListPage.clickShoppingButton();
-        String actualTitle  = driver.getTitle();
-        String expectedTitle = "Prom.ua — маркетплейс Украины";
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "Prom.ua — маркетплейс України";
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 }
