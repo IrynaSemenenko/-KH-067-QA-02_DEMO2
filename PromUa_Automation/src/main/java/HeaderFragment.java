@@ -7,7 +7,7 @@ public class HeaderFragment extends BasePage {
     WebElement favoriteButton = driver.findElement(By.xpath("//button[@data-qaid='favorite_cabinet_button']"));
     WebElement singInButton = driver.findElement(By.xpath("//button[@data-qaid='sign-in']"));
     WebElement myPromButton = driver.findElement(By.xpath("//*[@id='page-block']/div/div[2]/div/div/div[2]/div[2]"));
-    WebElement helpButton = driver.findElement(By.xpath("//*[@id='page-block']/div/div[2]/div/div/div[1]/div[3]/a"));
+    WebElement helpButton = driver.findElement(By.xpath("//div/a[contains(@href, 'help.prom.ua')]"));
     WebElement promoPanel = driver.findElement(By.xpath("//*[@id='page-block']/div/div[1]"));
 
     public HeaderFragment(WebDriver driver) {

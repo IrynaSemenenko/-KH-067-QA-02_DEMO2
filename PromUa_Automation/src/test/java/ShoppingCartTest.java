@@ -3,13 +3,13 @@ import org.testng.annotations.Test;
 
 public class ShoppingCartTest extends BaseTest {
     HomePage homePage;
-    HeaderPage headerPage;
+    HeaderTest headerPage;
     ShoppingCartPage shoppingCartPage;
 
     @Test
     public void testDisabledMinusButton() {
         homePage = new HomePage(driver);
-        headerPage = new HeaderPage(driver);
+        headerPage = new HeaderTest(driver);
         shoppingCartPage = new ShoppingCartPage(driver);
         //scroll to often chosen elements block
         homePage.clickProduct();
@@ -22,7 +22,7 @@ public class ShoppingCartTest extends BaseTest {
     @Test
     public void testEnabledMinusButton() {
         homePage = new HomePage(driver);
-        headerPage = new HeaderPage(driver);
+        headerPage = new HeaderTest(driver);
         shoppingCartPage = new ShoppingCartPage(driver);
         //scroll to often chosen elements block
         homePage.clickProduct();
