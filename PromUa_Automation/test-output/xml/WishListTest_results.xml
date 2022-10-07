@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="PromUa_Automation"
+<testsuite name="-KH-067-QA-02_DEMO2"
            tests="3"
            failures="1"
            errors="0"
            skipped="0"
-           time="17,210">
+           time="27.393">
     <properties></properties>
 
             <testcase
                 name="shoppingButtonInWishList"
-                time="7,492"
+                time="10.719"
                 classname="WishListTest">
 
             <failure type="java.lang.AssertionError" message="expected [Prom.ua — маркетплейс Украины] but found [Кабінет покупця]">
@@ -22,12 +22,12 @@
 
             <testcase
                 name="addProductsToWishlist"
-                time="5,431"
+                time="9.674"
                 classname="WishListTest">
             </testcase>
             <testcase
                 name="goToWishlist"
-                time="4,287"
+                time="7.000"
                 classname="WishListTest">
             </testcase>
 </testsuite>

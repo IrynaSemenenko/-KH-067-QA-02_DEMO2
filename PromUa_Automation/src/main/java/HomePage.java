@@ -11,6 +11,7 @@ public class HomePage extends BasePage {
     By favoriteButtons = By.xpath("//span[@data-qaid='add_favorite']");
     By favoriteButton = By.xpath("(//span[@data-qaid='add_favorite'])[3]");
     By product = By.xpath("(//a[@data-qaid='buy-button'])[1]");
+
     By titleForYou = By.xpath("(//div[@class='M3v0L YKUY6'])[2]");
 
     public HomePage(WebDriver driver) {
