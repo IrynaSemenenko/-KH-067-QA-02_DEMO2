@@ -1,0 +1,5 @@
+# Created at 2022-10-07T15:54:00.962
+Boot Manifest-JAR contains absolute paths in classpath 'D:\Ira\SoftServe\Project (gitHub)\DEMO2\-KH-067-QA-02_DEMO2\PromUa_Automation\target\test-classes'
+Hint: <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+'other' has different root
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Regression"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="5,045">
+    <properties></properties>
+
+
+
+            <testcase
+                name="goToTariffsLink"
+                time="2,763"
+                classname="FooterTest">
+            </testcase>
+            <testcase
+                name="goToSellersHelpLink"
+                time="1,411"
+                classname="FooterTest">
+            </testcase>
+            <testcase
+                name="goToBuyersHelpLink"
+                time="0,871"
+                classname="FooterTest">
+            </testcase>
+</testsuite>

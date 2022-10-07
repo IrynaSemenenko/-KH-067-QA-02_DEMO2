@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Surefire test"
+           tests="3"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="5,064">
+    <properties></properties>
+
+
+
+            <testcase
+                name="goToTariffsLink"
+                time="2,499"
+                classname="FooterTest">
+            </testcase>
+            <testcase
+                name="goToSellersHelpLink"
+                time="1,097"
+                classname="FooterTest">
+            </testcase>
+            <testcase
+                name="goToBuyersHelpLink"
+                time="1,468"
+                classname="FooterTest">
+            </testcase>
+</testsuite>

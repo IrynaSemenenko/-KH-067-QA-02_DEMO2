@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2022-10-07T17:38:15 EEST" name="Surefire suite" finished-at="2022-10-07T17:39:23 EEST" duration-ms="68124">
+    <groups>
+    </groups>
+    <test started-at="2022-10-07T17:38:15 EEST" name="Surefire test" finished-at="2022-10-07T17:39:23 EEST" duration-ms="68124">
+      <class name="WishListTest">
+        <test-method is-config="true" signature="initDriver()[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:38:37 EEST" name="initDriver" finished-at="2022-10-07T17:38:41 EEST" duration-ms="4978" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method signature="addProductsToWishlist()[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:38:42 EEST" name="addProductsToWishlist" finished-at="2022-10-07T17:38:53 EEST" duration-ms="11317" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [3] but found [4]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [3] but found [4]
+at org.testng.Assert.fail(Assert.java:110)
+at org.testng.Assert.failNotEquals(Assert.java:1413)
+at org.testng.Assert.assertEqualsImpl(Assert.java:149)
+at org.testng.Assert.assertEquals(Assert.java:131)
+at org.testng.Assert.assertEquals(Assert.java:655)
+at org.testng.Assert.assertEquals(Assert.java:665)
+at WishListTest.addProductsToWishlist(WishListTest.java:32)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
+at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:677)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:962)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+at org.testng.TestRunner.privateRun(TestRunner.java:806)
+at org.testng.TestRunner.run(TestRunner.java:601)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:433)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:427)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:387)
+at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+at org.testng.TestNG.runSuites(TestNG.java:1099)
+at org.testng.TestNG.run(TestNG.java:1067)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:151)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:192)
+at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:93)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:155)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:456)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:169)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:595)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:581)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addProductsToWishlist -->
+        <test-method is-config="true" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:38:53 EEST" name="takeScreenshot" finished-at="2022-10-07T17:38:54 EEST" duration-ms="790" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=addProductsToWishlist status=FAILURE method=WishListTest.addProductsToWishlist()[pri:0, instance:WishListTest@4a699efa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method is-config="true" signature="initDriver()[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:38:54 EEST" name="initDriver" finished-at="2022-10-07T17:38:59 EEST" duration-ms="5751" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method signature="goToWishlist()[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:38:59 EEST" name="goToWishlist" finished-at="2022-10-07T17:39:06 EEST" duration-ms="6177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToWishlist -->
+        <test-method is-config="true" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:39:06 EEST" name="takeScreenshot" finished-at="2022-10-07T17:39:06 EEST" duration-ms="374" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=goToWishlist status=SUCCESS method=WishListTest.goToWishlist()[pri:0, instance:WishListTest@4a699efa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method is-config="true" signature="initDriver()[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:39:06 EEST" name="initDriver" finished-at="2022-10-07T17:39:11 EEST" duration-ms="4876" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method signature="shoppingButtonInWishList()[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:39:11 EEST" name="shoppingButtonInWishList" finished-at="2022-10-07T17:39:22 EEST" duration-ms="11512" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- shoppingButtonInWishList -->
+        <test-method is-config="true" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:WishListTest@4a699efa]" started-at="2022-10-07T17:39:22 EEST" name="takeScreenshot" finished-at="2022-10-07T17:39:23 EEST" duration-ms="370" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=shoppingButtonInWishList status=SUCCESS method=WishListTest.shoppingButtonInWishList()[pri:0, instance:WishListTest@4a699efa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+      </class> <!-- WishListTest -->
+      <class name="FooterTest">
+        <test-method is-config="true" signature="initDriver()[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:15 EEST" name="initDriver" finished-at="2022-10-07T17:38:21 EEST" duration-ms="6115" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method signature="goToBuyersHelpLink()[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:21 EEST" name="goToBuyersHelpLink" finished-at="2022-10-07T17:38:23 EEST" duration-ms="1468" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToBuyersHelpLink -->
+        <test-method is-config="true" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:23 EEST" name="takeScreenshot" finished-at="2022-10-07T17:38:23 EEST" duration-ms="381" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=goToBuyersHelpLink status=SUCCESS method=FooterTest.goToBuyersHelpLink()[pri:0, instance:FooterTest@7b44b63d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method is-config="true" signature="initDriver()[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:23 EEST" name="initDriver" finished-at="2022-10-07T17:38:27 EEST" duration-ms="4119" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method signature="goToSellersHelpLink()[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:27 EEST" name="goToSellersHelpLink" finished-at="2022-10-07T17:38:28 EEST" duration-ms="1097" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToSellersHelpLink -->
+        <test-method is-config="true" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:28 EEST" name="takeScreenshot" finished-at="2022-10-07T17:38:28 EEST" duration-ms="314" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=goToSellersHelpLink status=SUCCESS method=FooterTest.goToSellersHelpLink()[pri:0, instance:FooterTest@7b44b63d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+        <test-method is-config="true" signature="initDriver()[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:28 EEST" name="initDriver" finished-at="2022-10-07T17:38:34 EEST" duration-ms="5153" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initDriver -->
+        <test-method signature="goToTariffsLink()[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:34 EEST" name="goToTariffsLink" finished-at="2022-10-07T17:38:36 EEST" duration-ms="2499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- goToTariffsLink -->
+        <test-method is-config="true" signature="takeScreenshot(org.testng.ITestResult)[pri:0, instance:FooterTest@7b44b63d]" started-at="2022-10-07T17:38:36 EEST" name="takeScreenshot" finished-at="2022-10-07T17:38:37 EEST" duration-ms="368" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=goToTariffsLink status=SUCCESS method=FooterTest.goToTariffsLink()[pri:0, instance:FooterTest@7b44b63d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- takeScreenshot -->
+      </class> <!-- FooterTest -->
+    </test> <!-- Surefire test -->
+  </suite> <!-- Surefire suite -->
+</testng-results>
