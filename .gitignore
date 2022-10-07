@@ -8,6 +8,10 @@
 .idea/
 *.iml
 out/
+.png
+test-output/
+target/
+allure-results/
 
 # BlueJ files
 *.ctxt

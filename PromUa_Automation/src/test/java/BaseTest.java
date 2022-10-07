@@ -1,3 +1,4 @@
+import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
@@ -14,8 +15,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class BaseTest implements ITestListener {
-    public static final String MAIN_PAGE_URL = "https://prom.ua/";
     WebDriver driver;
+    public static final String MAIN_PAGE_URL = "https://prom.ua/";
 
     @BeforeMethod
     public void initDriver() {
