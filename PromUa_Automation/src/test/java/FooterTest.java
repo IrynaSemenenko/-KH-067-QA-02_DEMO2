@@ -2,12 +2,12 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class FooterTest extends BaseTest{
-    FooterPage footerPage;
+    FooterFragment footerPage;
 
 
     @Test
     public void goToBuyersHelpLink() {
-        footerPage = new FooterPage(driver);
+        footerPage = new FooterFragment(driver);
         footerPage.clickBuyersHelpLink();
         String actualUrl = driver.getCurrentUrl();
         String expectedUrl = "https://help.prom.ua/hc/ru";
@@ -16,7 +16,7 @@ public class FooterTest extends BaseTest{
 
     @Test
     public void goToSellersHelpLink() {
-        footerPage = new FooterPage(driver);
+        footerPage = new FooterFragment(driver);
         footerPage.clickSellersHelpLink();
         String actualUrl = driver.getCurrentUrl();
         String expectedUrl = "https://support.prom.ua/hc/ru";
@@ -25,7 +25,7 @@ public class FooterTest extends BaseTest{
 
     @Test
     public void goToTariffsLink() {
-        footerPage = new FooterPage(driver);
+        footerPage = new FooterFragment(driver);
         footerPage.clickTariffsLink();
         String actualUrl = driver.getCurrentUrl();
         String expectedUrl = "https://my.prom.ua/ua/how_to_order";
