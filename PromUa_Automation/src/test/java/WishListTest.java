@@ -1,3 +1,4 @@
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,7 +9,7 @@ public class WishListTest extends BaseTest {
     LoginPage loginPage;
     HomePage homePage;
 
-
+    @Description("Check that user can go to wishlist using the favorite button in the header as an unregistered user")
     @Test
     public void goToWishlist() {
         homePage = new HomePage(driver);
@@ -19,6 +20,7 @@ public class WishListTest extends BaseTest {
         Assert.assertTrue(wishListPage.nameWishListPageIsDisplayed());
     }
 
+    @Description("Сheck that the 'heart' icon in the header is displayed the correct numeric indicator of added items")
     @Test
     public void addProductsToWishlist() {
         homePage = new HomePage(driver);
@@ -33,6 +35,7 @@ public class WishListTest extends BaseTest {
         Assert.assertEquals(actualResult, expectedResult);
     }
 
+    @Description("Check that click on the 'За покупками' in the empty 'Бажане' page redirects to the main page")
     @Test
     public void shoppingButtonInWishList() {
         homePage = new HomePage(driver);
