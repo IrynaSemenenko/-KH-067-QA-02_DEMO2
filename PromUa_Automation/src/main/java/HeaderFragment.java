@@ -9,6 +9,7 @@ public class HeaderFragment extends BasePage {
     WebElement myPromButton = driver.findElement(By.xpath("//*[@id='page-block']/div/div[2]/div/div/div[2]/div[2]"));
     WebElement helpButton = driver.findElement(By.xpath("//div/a[contains(@href, 'help.prom.ua')]"));
     WebElement promoPanel = driver.findElement(By.xpath("//*[@id='page-block']/div/div[1]"));
+    WebElement shoppingCartButton = driver.findElement(By.xpath("//button[@data-qaid='shopping_cart']"));
 
     public HeaderFragment(WebDriver driver) {
         super(driver);
@@ -29,6 +30,10 @@ public class HeaderFragment extends BasePage {
 
     public void clickPromoPanel() {
         wait.until(ExpectedConditions.elementToBeClickable(promoPanel)).click();
+    }
+
+    public void clickShoppingCartButton() {
+        wait.until(ExpectedConditions.visibilityOf(shoppingCartButton)).click();
     }
 }
 
