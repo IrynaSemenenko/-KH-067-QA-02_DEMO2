@@ -3,9 +3,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class FooterTest extends BaseTest {
-
     HomePage homePage;
-
 
     @Description("Check that buyers support button leads to page with popular questions for sellers")
     @Test

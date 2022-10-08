@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -17,12 +18,14 @@ public class WishListPage extends BasePage {
         super(driver);
     }
 
+    @Step("Find the name of wishlist page")
     public boolean nameWishListPageIsDisplayed() {
         nameWishListPage = driver.findElement(By.xpath("//span[@class='_3Trjq OAv5u']"));
         return wait.until(ExpectedConditions.visibilityOf(nameWishListPage))
                 .isDisplayed();
     }
 
+    @Step("Click on the shopping button in the wishlist")
     public void clickShoppingButton() {
         deleteButtons = driver.findElements(By.xpath("//span[@data-qaid='delete_icon']"));
         if (!deleteButtons.isEmpty()) {
@@ -34,11 +37,13 @@ public class WishListPage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(shoppingButton)).click();
     }
 
+    @Step("Get the count of added products from the wishlist")
     public String getCountAddedProduct() {
         addedProducts = driver.findElements(By.xpath("//a[@data-qaid='product_name']"));
         return String.valueOf(addedProducts.size());
     }
 
+    @Step("Get the count of added products from the 'heart' icon in the header")
     public String getAttributeCounterFavorite() {
         counterFavorite = driver.findElement(By.xpath("//a[@data-qaid='comparison_btn']//span"));
         return counterFavorite.getText();
