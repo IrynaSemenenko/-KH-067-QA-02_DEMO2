@@ -1,41 +1,54 @@
+import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+
+import java.util.ArrayList;
 
 public class WishListTest extends BaseTest {
     WishListPage wishListPage;
     LoginPage loginPage;
     HomePage homePage;
-    HeaderPage headerPage;
 
+    @Description("Check that user can go to wishlist using the favorite button in the header as an unregistered user")
     @Test
     public void goToWishlist() {
-        wishListPage = new WishListPage(driver);
+        homePage = new HomePage(driver);
+        homePage.getHeaderFragment().clickFavoriteButton();
         loginPage = new LoginPage(driver);
-        loginPage.authorizationWithFavoriteButton("irinabublik039@gmail.com", "Ib(0992163097)");
+        loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
+        wishListPage = new WishListPage(driver);
         Assert.assertTrue(wishListPage.nameWishListPageIsDisplayed());
     }
 
+    @Description("Сheck that the 'heart' icon in the header is displayed the correct numeric indicator of added items")
     @Test
     public void addProductsToWishlist() {
-        wishListPage = new WishListPage(driver);
-        loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-        headerPage = new HeaderPage(driver);
+        homePage.getHeaderFragment().clickSingInButton();
+        loginPage = new LoginPage(driver);
         loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
         homePage.clickFavoriteButtons();
-        headerPage.clickFavoriteButton();
+        homePage.getHeaderFragment().clickFavoriteButton();
+        wishListPage = new WishListPage(driver);
+        String expectedResult = wishListPage.getCountAddedProduct();
+        String actualResult = wishListPage.getAttributeCounterFavorite();
+        Assert.assertEquals(actualResult, expectedResult);
     }
 
+    @Description("Check that click on the 'За покупками' in the empty 'Бажане' page redirects to the main page")
     @Test
     public void shoppingButtonInWishList() {
-        wishListPage = new WishListPage(driver);
-        loginPage = new LoginPage(driver);
         homePage = new HomePage(driver);
-        loginPage.authorizationWithFavoriteButton("irinabublik039@gmail.com", "Ib(0992163097)");
+        homePage.getHeaderFragment().clickFavoriteButton();
+        loginPage = new LoginPage(driver);
+        loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
+        wishListPage = new WishListPage(driver);
         wishListPage.nameWishListPageIsDisplayed();
         wishListPage.clickShoppingButton();
-        String actualTitle  = driver.getTitle();
-        String expectedTitle = "Prom.ua — маркетплейс Украины";
+        ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
+        String actualTitle = driver.getTitle();
+        String expectedTitle = "Prom.ua — маркетплейс України";
         Assert.assertEquals(actualTitle, expectedTitle);
     }
 }

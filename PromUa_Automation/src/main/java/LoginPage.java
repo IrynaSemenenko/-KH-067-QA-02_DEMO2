@@ -1,61 +1,61 @@
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
-    By emailButtonLocator = By.xpath("//div[@data-qaid='email_btn']");
-    By emailFieldLocator = By.id("email_field");
-    By submitEmailButtonLocator = By.id("emailConfirmButton");
-    By passwordFieldLocator = By.id("enterPassword");
-    By submitPasswordButtonLocator = By.id("enterPasswordConfirmButton");
+    WebElement emailButton;
+    WebElement emailField;
+    WebElement submitEmailButton;
+    WebElement passwordField;
+    WebElement submitPasswordButton;
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
+    @Step("Click on the email button")
     public void clickEmailButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(emailButtonLocator))
+        emailButton = driver.findElement(By.xpath("//div[@data-qaid='email_btn']"));
+        wait.until(ExpectedConditions.elementToBeClickable(emailButton))
                 .click();
     }
 
+    @Step("Enter value to the email field")
     public void enterEmail(String email) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(emailFieldLocator))
+        emailField = driver.findElement(By.id("email_field"));
+        wait.until(ExpectedConditions.visibilityOf(emailField))
                 .sendKeys(email);
     }
 
+    @Step("Enter value to the password field")
     public void enterPassword(String password) {
-        wait.until(ExpectedConditions.presenceOfElementLocated(passwordFieldLocator))
+        passwordField = driver.findElement(By.id("enterPassword"));
+        wait.until(ExpectedConditions.visibilityOf(passwordField))
                 .sendKeys(password);
     }
 
+    @Step("Click on the email button")
     public void clickSubmitEmailButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(submitEmailButtonLocator))
+        submitEmailButton = driver.findElement(By.id("emailConfirmButton"));
+        wait.until(ExpectedConditions.elementToBeClickable(submitEmailButton))
                 .click();
     }
 
+    @Step("Click on the password button")
     public void clickSubmitPasswordButton() {
-        wait.until(ExpectedConditions.presenceOfElementLocated(submitPasswordButtonLocator))
+        submitPasswordButton = driver.findElement(By.id("enterPasswordConfirmButton"));
+        wait.until(ExpectedConditions.elementToBeClickable(submitPasswordButton))
                 .click();
     }
-    public void authorizationWithFavoriteButton(String email, String password) { //favorite button in the header
-        HeaderPage headerPage = new HeaderPage(driver);
-        LoginPage loginPage = new LoginPage(driver);
-        headerPage.clickFavoriteButton();
-        loginPage.clickEmailButton();
-        loginPage.enterEmail(email);
-        loginPage.clickSubmitEmailButton();
-        loginPage.enterPassword(password);
-        loginPage.clickSubmitPasswordButton();
-    }
+
+    @Step("Authorization of the registered user")
     public void authorization(String email, String password) {
-        HeaderPage headerPage = new HeaderPage(driver);
-        LoginPage loginPage = new LoginPage(driver);
-        headerPage.clickSingInButton();
-        loginPage.clickEmailButton();
-        loginPage.enterEmail(email);
-        loginPage.clickSubmitEmailButton();
-        loginPage.enterPassword(password);
-        loginPage.clickSubmitPasswordButton();
+        clickEmailButton();
+        enterEmail(email);
+        clickSubmitEmailButton();
+        enterPassword(password);
+        clickSubmitPasswordButton();
     }
 }
