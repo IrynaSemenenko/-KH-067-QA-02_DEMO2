@@ -6,7 +6,7 @@ import org.testng.annotations.Test;
 
 public class AdditionalFunctionsOnMainPageTest extends BaseTest {
 
-    private HomePage homePage;
+    HomePage homePage;
 
     @Description("Check that component 'Знайти' is presented on Ukrainian version and component 'Найти' is presented on Russian version")
     @Test
