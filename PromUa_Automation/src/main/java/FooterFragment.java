@@ -8,6 +8,8 @@ public class FooterFragment extends BasePage{
     WebElement sellersHelpLink;
     WebElement tariffsLink;
     WebElement userAgreement;
+    WebElement youTubeButton;
+    WebElement changeThemeButton;
 
     public FooterFragment(WebDriver driver) {
         super(driver);
@@ -27,5 +29,18 @@ public class FooterFragment extends BasePage{
     }
     public void clickUserAgreement(){
         userAgreement = driver.findElement(By.xpath("//a[@href='/ua/terms-of-use']"));
-        wait.until(ExpectedConditions.visibilityOf(userAgreement)).click();}
+        wait.until(ExpectedConditions.visibilityOf(userAgreement)).click();
+    }
+    public  void clickYoutubeButton(){
+        youTubeButton = driver.findElement(By.xpath("//*[@clip-path='url(#Youtube__a)']"));
+        wait.until(ExpectedConditions.elementToBeClickable(youTubeButton)).click();
+    }
+    public void clickChangeTheme(){
+        changeThemeButton = driver.findElement(By.xpath("//button[@class='_0cNvO _0YfIB jwtUM']"));
+        wait.until(ExpectedConditions.elementToBeClickable(changeThemeButton)).click();
+    }
+    public String getTitleChangeTheme(){
+        changeThemeButton = driver.findElement(By.xpath("//button[@class='_0cNvO _0YfIB jwtUM']"));
+        return changeThemeButton.getAttribute("title");
+    }
 }
