@@ -24,6 +24,7 @@ public class HomePage extends BasePage {
     By menuProductsLocator = By.xpath("//*[@data-qaid='menu_preview']");
     By seasonFeedLocator = By.xpath("//*[@data-qaid='menu_parent']");
 
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
@@ -82,4 +83,14 @@ public class HomePage extends BasePage {
         return wait.until(ExpectedConditions.visibilityOf(seasonFeedOnMainPage))
                 .isDisplayed();
     }
+
+    @Step("Click on product title")
+    public void clickOnProductTitle() {
+        Actions actions = new Actions(driver);
+        titleForYou = driver.findElement(By.xpath("(//div[@class='M3v0L YKUY6'])[2]"));
+        actions.scrollToElement(titleForYou).perform();
+        WebElement titleProduct = driver.findElement(By.xpath("(//div[@class='M3v0L -pUjB VrlHh']/a)[1]"));
+        wait.until(ExpectedConditions.visibilityOf(titleProduct)).click();
+    }
 }
+
