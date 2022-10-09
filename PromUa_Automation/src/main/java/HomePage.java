@@ -24,10 +24,12 @@ public class HomePage extends BasePage {
     By menuProductsLocator = By.xpath("//*[@data-qaid='menu_preview']");
     By seasonFeedLocator = By.xpath("//*[@data-qaid='menu_parent']");
 
+
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
+    @Step("Click language button")
     public void clickLanguageButton(By languageLocator) {
         WebElement languageButton = driver.findElement(languageLocator);
         languageButton.click();
@@ -67,4 +69,28 @@ public class HomePage extends BasePage {
     public CatalogFragment getCatalogFragment() {
         return catalogFragment;
     }
+
+    @Step("Find the menu product on home page")
+    public boolean menuProductsOnMainPageIsDisplayed() {
+        WebElement menuProductsOnMainPage = driver.findElement(menuProductsLocator);
+        return wait.until(ExpectedConditions.visibilityOf(menuProductsOnMainPage))
+                .isDisplayed();
+    }
+
+    @Step("Find the season feed on home page")
+    public boolean seasonFeedOnMainPageIsDisplayed() {
+        WebElement seasonFeedOnMainPage = driver.findElement(seasonFeedLocator);
+        return wait.until(ExpectedConditions.visibilityOf(seasonFeedOnMainPage))
+                .isDisplayed();
+    }
+
+    @Step("Click on product title")
+    public void clickOnProductTitle() {
+        Actions actions = new Actions(driver);
+        titleForYou = driver.findElement(By.xpath("(//div[@class='M3v0L YKUY6'])[2]"));
+        actions.scrollToElement(titleForYou).perform();
+        WebElement titleProduct = driver.findElement(By.xpath("(//div[@class='M3v0L -pUjB VrlHh']/a)[1]"));
+        wait.until(ExpectedConditions.visibilityOf(titleProduct)).click();
+    }
 }
+
