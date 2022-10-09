@@ -28,6 +28,7 @@ public class HomePage extends BasePage {
         super(driver);
     }
 
+    @Step("Click language button")
     public void clickLanguageButton(By languageLocator) {
         WebElement languageButton = driver.findElement(languageLocator);
         languageButton.click();
@@ -63,5 +64,19 @@ public class HomePage extends BasePage {
     }
     public CatalogFragment getCatalogFragment() {
         return catalogFragment;
+    }
+
+    @Step("Find the menu product on home page")
+    public boolean menuProductsOnMainPageIsDisplayed() {
+        WebElement menuProductsOnMainPage = driver.findElement(menuProductsLocator);
+        return wait.until(ExpectedConditions.visibilityOf(menuProductsOnMainPage))
+                .isDisplayed();
+    }
+
+    @Step("Find the season feed on home page")
+    public boolean seasonFeedOnMainPageIsDisplayed() {
+        WebElement seasonFeedOnMainPage = driver.findElement(seasonFeedLocator);
+        return wait.until(ExpectedConditions.visibilityOf(seasonFeedOnMainPage))
+                .isDisplayed();
     }
 }
