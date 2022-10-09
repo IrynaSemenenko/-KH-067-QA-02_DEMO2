@@ -16,7 +16,7 @@ public class HomePage extends BasePage {
     List<WebElement> favoriteButtons;
     WebElement favoriteButton;
     WebElement product;
-    WebElement titleForYou = driver.findElement(By.xpath("(//div[@class='M3v0L YKUY6'])[2]"));
+    WebElement titleForYou;
 
     By searchButtonLocator = By.xpath("//*[@data-qaid='search_btn']");
     By ruLanguageLocator = By.xpath("//*[@data-qaid='ru_lang']");
@@ -37,6 +37,7 @@ public class HomePage extends BasePage {
     @Step("Add several products to the wishlist")
     public void clickFavoriteButtons() {
         Actions actions = new Actions(driver);
+        titleForYou = driver.findElement(By.xpath("(//div[@class='M3v0L YKUY6'])[2]"));
         actions.scrollToElement(titleForYou).perform();
         favoriteButtons = driver.findElements(By.xpath("//span[@data-qaid='add_favorite']"));
         favoriteButton = driver.findElement(By.xpath("(//span[@data-qaid='add_favorite'])[3]"));
@@ -50,6 +51,7 @@ public class HomePage extends BasePage {
     @Step("Add product to the cart")
     public void clickProduct() {
         Actions actions = new Actions(driver);
+        titleForYou = driver.findElement(By.xpath("(//div[@class='M3v0L YKUY6'])[2]"));
         actions.scrollToElement(titleForYou).perform();
         product = driver.findElement(By.xpath("(//a[@data-qaid='buy-button'])[1]"));
         wait.until(ExpectedConditions.visibilityOf(product)).click();
@@ -62,6 +64,7 @@ public class HomePage extends BasePage {
     public FooterFragment getFooterFragment() {
         return footerFragment;
     }
+
     public CatalogFragment getCatalogFragment() {
         return catalogFragment;
     }
