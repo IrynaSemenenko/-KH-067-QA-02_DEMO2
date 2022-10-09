@@ -3,9 +3,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class FooterTest extends BaseTest {
-
     HomePage homePage;
-
+    GooglePage googlePage;
 
     @Description("Check that buyers support button leads to page with popular questions for sellers")
     @Test
@@ -45,5 +44,21 @@ public class FooterTest extends BaseTest {
         String actualUrl = driver.getCurrentUrl();
         String expectedUrl = "https://prom.ua/ua/terms-of-use";
         Assert.assertEquals(actualUrl, expectedUrl);
+    }
+    @Description("Check that User can move on the YouTube channel")
+    @Test
+    public void goToYouTubeChannel(){
+        homePage = new HomePage(driver);
+        homePage.getFooterFragment().clickYoutubeButton();
+        googlePage = new GooglePage(driver);
+        googlePage.clickGetAll();
+        Assert.assertEquals(driver.getCurrentUrl(), "https://www.youtube.com/prom4ua");
+    }
+    @Description("Check that theme Button is changed")
+    @Test
+    public void changeTheme(){
+        homePage = new HomePage(driver);
+        homePage.getFooterFragment().clickChangeTheme();
+        Assert.assertEquals(homePage.getFooterFragment().getTitleChangeTheme(),"Вимкнути темну тему");
     }
 }
