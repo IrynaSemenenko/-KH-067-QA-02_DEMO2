@@ -15,7 +15,7 @@ public class HeaderTest extends BaseTest {
         homePage.getHeaderFragment().clickSingInButton();
         loginPage = new LoginPage(driver);
         loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
-        Assert.assertEquals(homePage.getHeaderFragment().myPromButton.getAttribute("href"), "https://my.prom.ua/uk/cabinet/user", "Href doesn't match current href");
+        Assert.assertEquals(homePage.getHeaderFragment().getAttributeMyPromButton(), "https://my.prom.ua/uk/cabinet/user", "Href doesn't match current href");
     }
 
     @Description("Check that Help button leads to the following window")
