@@ -18,37 +18,45 @@ public class CatalogFragment extends BasePage{
         super(driver);
     }
 
+    @Step ("Open Catalog category)")
     public void openCatalogPosition(){
         wait.until(ExpectedConditions.visibilityOf(catalogPosition))
             .click();
     }
+    @Step ("Open Catalog sub-category)")
     public void openCatalogSubPosition(){
         wait.until(ExpectedConditions.visibilityOf(catalogSubPosition))
                 .click();
     }
+    @Step ("Open Catalog sub-category(1)")
     public void openCatalogSubPosition1(){
         wait.until(ExpectedConditions.visibilityOf(catalogSubPosition1))
                 .click();
     }
+    @Step ("Open Catalog sub-category(2)")
     public void openCatalogSubPosition2(){
         wait.until(ExpectedConditions.visibilityOf(catalogSubPosition2))
                 .click();
     }
+    @Step ("Click the Catalog button")
     public void catalogButtonClick(){
         wait.until(ExpectedConditions.visibilityOf(catalogButton))
             .click();
     }
+    @Step ("Scroll the Catalog Popup")
     public void catalogPopupFromButtonScroll(){
         wait.until(ExpectedConditions.visibilityOf(catalogListFromButton));
         Actions actions = new Actions(driver);
         WebElement catalogPopupLastLine = driver.findElement(By.xpath("//a[@href='/ua/kabanchik']"));
         actions.scrollToElement(catalogPopupLastLine).perform();
     }
+    @Step ("Find the first line of Catalog List")
     public void findCatalogFirstLine(){
         wait.until(ExpectedConditions.visibilityOf(catalogPopupFirstLine));
         Actions actions = new Actions(driver);
         actions.moveToElement(catalogPopupFirstLine).perform();
     }
+    @Step ("Scroll the Catalog Popup")
     public void catalogPopupFromHomePageScroll(){
         wait.until(ExpectedConditions.visibilityOf(catalogListFromHomePage));
         Actions actions = new Actions(driver);
