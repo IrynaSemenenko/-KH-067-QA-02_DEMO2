@@ -20,8 +20,7 @@ public class WishListPage extends BasePage {
     @Step("Find the name of wishlist page")
     public boolean nameWishListPageIsDisplayed() {
         nameWishListPage = driver.findElement(By.xpath("//span[@class='_3Trjq OAv5u']"));
-        return wait.until(ExpectedConditions.visibilityOf(nameWishListPage))
-                .isDisplayed();
+        return wait.until(ExpectedConditions.visibilityOf(nameWishListPage)).isDisplayed();
     }
 
     @Step("Click on the shopping button in the wishlist")

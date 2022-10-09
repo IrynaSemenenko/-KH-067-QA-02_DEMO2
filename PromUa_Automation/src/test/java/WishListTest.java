@@ -20,7 +20,7 @@ public class WishListTest extends BaseTest {
         Assert.assertTrue(wishListPage.nameWishListPageIsDisplayed());
     }
 
-    @Description("Сheck that the 'heart' icon in the header is displayed the correct numeric indicator of added items")
+    @Description("Check that the 'heart' icon in the header is displayed the correct numeric indicator of added items")
     @Test
     public void addProductsToWishlist() {
         homePage = new HomePage(driver);
