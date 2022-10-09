@@ -12,6 +12,7 @@ import java.util.List;
 public class HomePage extends BasePage {
     private HeaderFragment headerFragment = new HeaderFragment(driver);
     private FooterFragment footerFragment = new FooterFragment(driver);
+    private CatalogFragment catalogFragment = new CatalogFragment(driver);
     List<WebElement> favoriteButtons;
     WebElement favoriteButton;
     WebElement product;
@@ -48,5 +49,8 @@ public class HomePage extends BasePage {
 
     public FooterFragment getFooterFragment() {
         return footerFragment;
+    }
+    public CatalogFragment getCatalogFragment() {
+        return catalogFragment;
     }
 }
