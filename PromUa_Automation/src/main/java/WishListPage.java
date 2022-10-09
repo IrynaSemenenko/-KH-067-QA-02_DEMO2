@@ -2,7 +2,6 @@ import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
@@ -29,11 +28,13 @@ public class WishListPage extends BasePage {
     public void clickShoppingButton() {
         deleteButtons = driver.findElements(By.xpath("//span[@data-qaid='delete_icon']"));
         if (!deleteButtons.isEmpty()) {
-            for (WebElement webElement : deleteButtons) {
-                webElement.click();
+            for (int i = 0; i < deleteButtons.size(); i++) {
+                deleteButtons.get(i).click();
+                deleteButtons.remove(i);
+                i--;
             }
         }
-        shoppingButton = driver.findElement(By.cssSelector(".uTnwV"));
+        shoppingButton = driver.findElement(By.cssSelector(".UQrBM"));
         wait.until(ExpectedConditions.elementToBeClickable(shoppingButton)).click();
     }
 
