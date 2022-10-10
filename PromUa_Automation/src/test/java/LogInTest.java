@@ -25,7 +25,7 @@ public class LogInTest extends BaseTest {
         Assert.assertEquals(homePage.getHeaderFragment().getTextSignInButton(), "Увійти");
     }
 
-    @Description("Check that an unthorized user can sign in using the 'Sign in' button")
+    @Description("Check that an authorized user can sign in using the 'Sign in' button")
     @Test
     public void authorizationUser() {
         homePage = new HomePage(driver);
