@@ -17,23 +17,27 @@ public class HomePage extends BasePage {
     WebElement product;
     WebElement titleForYou;
     WebElement searchField;
-
-    By searchButtonLocator = By.xpath("//*[@data-qaid='search_btn']");
-    By ruLanguageLocator = By.xpath("//*[@data-qaid='ru_lang']");
-    By uaLanguageLocator = By.xpath("//*[@data-qaid='ua_lang']");
-    By menuProductsLocator = By.xpath("//*[@data-qaid='menu_preview']");
-    By seasonFeedLocator = By.xpath("//*[@data-qaid='menu_parent']");
+    WebElement menuProductsOnMainPage;
+    WebElement seasonFeedOnMainPage;
+    WebElement forYouOnMainPage;
+    WebElement propozytsiyaMisyatsyaOnMainPage;
 
     public HomePage(WebDriver driver) {
         super(driver);
     }
 
-    @Step("Click language button")
-    public void clickLanguageButton(By languageLocator) {
-        WebElement languageButton = driver.findElement(languageLocator);
+    @Step("Click UA language button")
+    public void clickUaLanguageButton() {
+        By uaLanguageLocator = By.xpath("//*[@data-qaid='ua_lang']");
+        WebElement languageButton = driver.findElement(uaLanguageLocator);
         languageButton.click();
     }
-
+    @Step("Click RU language button")
+    public void clickRuLanguageButton() {
+        By ruLanguageLocator = By.xpath("//*[@data-qaid='ru_lang']");
+        WebElement languageButton = driver.findElement(ruLanguageLocator);
+        languageButton.click();
+    }
     @Step("Add several products to the wishlist")
     public void clickFavoriteButtons() {
         Actions actions = new Actions(driver);
@@ -88,18 +92,18 @@ public class HomePage extends BasePage {
 
     @Step("Find the menu product on home page")
     public boolean menuProductsOnMainPageIsDisplayed() {
-        WebElement menuProductsOnMainPage = driver.findElement(menuProductsLocator);
+        By menuProductsLocator = By.xpath("//*[@data-qaid='menu_preview']");
+        menuProductsOnMainPage = driver.findElement(menuProductsLocator);
         return wait.until(ExpectedConditions.visibilityOf(menuProductsOnMainPage))
                 .isDisplayed();
     }
-
     @Step("Find the season feed on home page")
     public boolean seasonFeedOnMainPageIsDisplayed() {
-        WebElement seasonFeedOnMainPage = driver.findElement(seasonFeedLocator);
+        By seasonFeedLocator = By.xpath("//*[@data-qaid='menu_parent']");
+        seasonFeedOnMainPage = driver.findElement(seasonFeedLocator);
         return wait.until(ExpectedConditions.visibilityOf(seasonFeedOnMainPage))
                 .isDisplayed();
     }
-
     @Step("Click on product title")
     public void clickOnProductTitle() {
         Actions actions = new Actions(driver);
@@ -108,7 +112,6 @@ public class HomePage extends BasePage {
         WebElement titleProduct = driver.findElement(By.xpath("(//div[@class='M3v0L -pUjB VrlHh']/a)[1]"));
         wait.until(ExpectedConditions.visibilityOf(titleProduct)).click();
     }
-
     @Step("Enter value in the search field")
     public void enterValue(String value) {
         searchField = driver.findElement(By.name("search_term"));
@@ -117,7 +120,18 @@ public class HomePage extends BasePage {
         searchField.submit();
 
     }
-
+    @Step("Find For You on home page")
+    public boolean forYouOnMainPageIsDisplayed() {
+        forYouOnMainPage = driver.findElement(By.className("l-GwW"));
+        return wait.until(ExpectedConditions.visibilityOf(forYouOnMainPage))
+                .isDisplayed();
+    }
+    @Step("Find 'Пропозиція місяця' on home page")
+    public boolean propozytsiyaMisyatsyaOnMainPageIsDisplayed() {
+        propozytsiyaMisyatsyaOnMainPage = driver.findElement(By.className("hXxo4"));
+        return wait.until(ExpectedConditions.visibilityOf(propozytsiyaMisyatsyaOnMainPage))
+                .isDisplayed();
+    }
 }
 
 
