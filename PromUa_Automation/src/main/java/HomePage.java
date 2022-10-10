@@ -1,4 +1,3 @@
-import io.qameta.allure.Description;
 import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -6,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends BasePage {
@@ -14,6 +12,7 @@ public class HomePage extends BasePage {
     private FooterFragment footerFragment = new FooterFragment(driver);
     private CatalogFragment catalogFragment = new CatalogFragment(driver);
     List<WebElement> favoriteButtons;
+    List<WebElement> recommendedProducts;
     WebElement favoriteButton;
     WebElement product;
     WebElement titleForYou;
@@ -47,14 +46,27 @@ public class HomePage extends BasePage {
             listFavoriteButtons.get(i).click();
         }
     }
-
-    @Step("Add product to the cart")
-    public void clickProduct() {
+    @Step("Scroll to recommendation block")
+    public void scrollToRecommendation() {
         Actions actions = new Actions(driver);
         titleForYou = driver.findElement(By.xpath("(//div[@class='M3v0L YKUY6'])[2]"));
         actions.scrollToElement(titleForYou).perform();
+    }
+    @Step("Add first product from recommendation block to the cart")
+    public void clickOnFirstRecommendedProduct() {
         product = driver.findElement(By.xpath("(//a[@data-qaid='buy-button'])[1]"));
         wait.until(ExpectedConditions.visibilityOf(product)).click();
+    }
+    @Step("Create list of products from recommendation block")
+    public List<WebElement> createListOfProducts(){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@data-qaid='buy-button']")));
+        recommendedProducts = driver.findElements(By.xpath("//a[@data-qaid='buy-button']"));
+        return recommendedProducts;
+    }
+    @Step("Scroll to product by index")
+    public void scrollToProduct(int index, List<WebElement> list){
+        Actions actions = new Actions(driver);
+        actions.scrollToElement(list.get(index)).perform();
     }
 
     public HeaderFragment getHeaderFragment() {

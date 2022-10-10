@@ -1,3 +1,4 @@
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,10 +42,11 @@ public class HeaderFragment extends BasePage {
         promoPanel = driver.findElement(By.xpath("//*[@id='page-block']/div/div[1]"));
         wait.until(ExpectedConditions.elementToBeClickable(promoPanel)).click();
     }
-
+    @Step("Click shopping cart button on the home page")
     public void clickShoppingCartButton() {
         shoppingCartButton = driver.findElement(By.xpath("//button[@data-qaid='shopping_cart']"));
         wait.until(ExpectedConditions.elementToBeClickable(shoppingCartButton));
+        shoppingCartButton.click();
     }
 }
 
