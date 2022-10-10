@@ -61,9 +61,9 @@ public class AccountPage extends BasePage {
     }
 
     @Step("Verify that shown password is present")
-    public void verifyShownPasswordIsPresent() {
+    public boolean verifyShownPasswordIsPresent() {
         oldPasswordShown = driver.findElement(By.cssSelector("[data-qaid='old_pass_input'][type='text']"));
-        wait.until(ExpectedConditions.visibilityOf(oldPasswordShown));
+        return wait.until(ExpectedConditions.visibilityOf(oldPasswordShown)).isDisplayed();
     }
 
     @Step("Click on the old password eye icon")
@@ -94,14 +94,8 @@ public class AccountPage extends BasePage {
     }
 
     @Step("Verify that settings saved message is present")
-    public void verifySettingsSavedMessageIsPresent() {
+    public boolean verifySettingsSavedMessageIsPresent() {
         settingsSavedMessage = driver.findElement(By.xpath("//p[text()='Налаштування профілю успішно збережені']"));
-        wait.until(ExpectedConditions.visibilityOf(settingsSavedMessage));
-    }
-
-    @Step("Verify that settings saved message isn't present")
-    public void verifySettingsSavedMessageIsNotPresent() {
-        settingsSavedMessage = driver.findElement(By.xpath("//p[text()='Налаштування профілю успішно збережені']"));
-        wait.until(ExpectedConditions.visibilityOf(settingsSavedMessage));
+        return wait.until(ExpectedConditions.visibilityOf(settingsSavedMessage)).isDisplayed();
     }
 }

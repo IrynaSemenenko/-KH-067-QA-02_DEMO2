@@ -22,7 +22,7 @@ public class AccountTest extends BaseTest{
         accountPage.fillOldPasswordInput("Test");
         accountPage.verifyEncryptedPasswordIsPresent();
         accountPage.clickOldPasswordEyeIcon();
-        accountPage.verifyShownPasswordIsPresent();
+        Assert.assertTrue(accountPage.verifyShownPasswordIsPresent());
     }
 
     @Description("Verify that confirmation message is present after saving data.")
@@ -38,7 +38,6 @@ public class AccountTest extends BaseTest{
         accountPage.clearNicknameInput();
         accountPage.fillNicknameInput("Test nickname");
         accountPage.clickSaveProfileButton();
-        accountPage.verifySettingsSavedMessageIsPresent();
-        accountPage.verifySettingsSavedMessageIsNotPresent();
+        Assert.assertTrue(accountPage.verifySettingsSavedMessageIsPresent());
     }
 }
