@@ -51,6 +51,11 @@ public class HeaderFragment extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(shoppingCartButton));
         shoppingCartButton.click();
     }
+    @Step("Get Text on the 'SignIn' Button")
+    public String getTextSignInButton() {
+        singInButton = driver.findElement(By.xpath("//button[@data-qaid='sign-in']"));
+        return wait.until(ExpectedConditions.elementToBeClickable(singInButton)).getText();
+    }
 }
 
 

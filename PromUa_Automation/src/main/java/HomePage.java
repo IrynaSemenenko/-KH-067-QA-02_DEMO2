@@ -16,23 +16,14 @@ public class HomePage extends BasePage {
     WebElement favoriteButton;
     WebElement product;
     WebElement titleForYou;
-    WebElement signInButton;
-
     By searchButtonLocator = By.xpath("//*[@data-qaid='search_btn']");
     By ruLanguageLocator = By.xpath("//*[@data-qaid='ru_lang']");
     By uaLanguageLocator = By.xpath("//*[@data-qaid='ua_lang']");
     By menuProductsLocator = By.xpath("//*[@data-qaid='menu_preview']");
     By seasonFeedLocator = By.xpath("//*[@data-qaid='menu_parent']");
-    By  signInButtonLocator= By.xpath("//button[@data-qaid='sign-in']");
-
 
     public HomePage(WebDriver driver) {
         super(driver);
-    }
-    @Step("Click 'Увійти' button")
-    public void clicksignInButton(By signInButtonLocator) {
-        WebElement signInButton = driver.findElement(signInButtonLocator);
-        signInButton.click();
     }
 
     @Step("Click language button")
