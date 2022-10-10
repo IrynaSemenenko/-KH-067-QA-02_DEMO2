@@ -12,7 +12,7 @@ public class LogInTest extends BaseTest {
     @Test
     public void logInButtonPresenceRus() {
         homePage = new HomePage(driver);
-        homePage.clickLanguageButton(homePage.ruLanguageLocator);
+       homePage.getHeaderFragment().clickRuButton();
         Assert.assertEquals(homePage.getHeaderFragment().getTextSignInButton(), "Войти");
     }
 
@@ -20,12 +20,12 @@ public class LogInTest extends BaseTest {
     @Test
     public void logInButtonPresenceUa() {
         homePage = new HomePage(driver);
-        homePage.clickLanguageButton(homePage.ruLanguageLocator);
-        homePage.clickLanguageButton(homePage.uaLanguageLocator);
+        homePage.getHeaderFragment().clickRuButton();
+        homePage.getHeaderFragment().clickUaButton();
         Assert.assertEquals(homePage.getHeaderFragment().getTextSignInButton(), "Увійти");
     }
 
-    @Description("Check that an unthorized user can sign in using the 'Sign in' button")
+    @Description("Check that an authorized user can sign in using the 'Sign in' button")
     @Test
     public void authorizationUser() {
         homePage = new HomePage(driver);

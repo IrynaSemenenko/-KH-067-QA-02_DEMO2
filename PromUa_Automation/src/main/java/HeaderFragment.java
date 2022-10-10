@@ -11,6 +11,8 @@ public class HeaderFragment extends BasePage {
     WebElement helpButton;
     WebElement promoPanel;
     WebElement shoppingCartButton;
+    WebElement ruLanguageButton;
+    WebElement uaLanguageButton;
 
     public HeaderFragment(WebDriver driver) {
         super(driver);
@@ -45,18 +47,33 @@ public class HeaderFragment extends BasePage {
         promoPanel = driver.findElement(By.xpath("//div[@data-qaid='promo_panel']"));
         wait.until(ExpectedConditions.elementToBeClickable(promoPanel)).click();
     }
+
     @Step("Click shopping cart button on the home page")
     public void clickShoppingCartButton() {
         shoppingCartButton = driver.findElement(By.xpath("//button[@data-qaid='shopping_cart']"));
         wait.until(ExpectedConditions.elementToBeClickable(shoppingCartButton));
         shoppingCartButton.click();
     }
+
     @Step("Get Text on the 'SignIn' Button")
     public String getTextSignInButton() {
         singInButton = driver.findElement(By.xpath("//button[@data-qaid='sign-in']"));
         return wait.until(ExpectedConditions.elementToBeClickable(singInButton)).getText();
     }
+
+    @Step("Click on the 'ru' Button")
+    public void clickRuButton() {
+        ruLanguageButton = driver.findElement(By.xpath("//*[@data-qaid='ru_lang']"));
+        wait.until(ExpectedConditions.elementToBeClickable(ruLanguageButton)).click();
+    }
+
+    @Step("Click on the 'UA' Button")
+    public void clickUaButton() {
+        uaLanguageButton = driver.findElement(By.xpath("//*[@data-qaid='ua_lang']"));
+        wait.until(ExpectedConditions.elementToBeClickable(uaLanguageButton)).click();
+    }
 }
+
 
 
 
