@@ -16,6 +16,8 @@ public class HomePage extends BasePage {
     WebElement favoriteButton;
     WebElement product;
     WebElement titleForYou;
+    WebElement searchField;
+
     By searchButtonLocator = By.xpath("//*[@data-qaid='search_btn']");
     By ruLanguageLocator = By.xpath("//*[@data-qaid='ru_lang']");
     By uaLanguageLocator = By.xpath("//*[@data-qaid='ua_lang']");
@@ -45,25 +47,29 @@ public class HomePage extends BasePage {
             listFavoriteButtons.get(i).click();
         }
     }
+
     @Step("Scroll to recommendation block")
     public void scrollToRecommendation() {
         Actions actions = new Actions(driver);
         titleForYou = driver.findElement(By.xpath("(//div[@class='M3v0L YKUY6'])[2]"));
         actions.scrollToElement(titleForYou).perform();
     }
+
     @Step("Add first product from recommendation block to the cart")
     public void clickOnFirstRecommendedProduct() {
         product = driver.findElement(By.xpath("(//a[@data-qaid='buy-button'])[1]"));
         wait.until(ExpectedConditions.visibilityOf(product)).click();
     }
+
     @Step("Create list of products from recommendation block")
-    public List<WebElement> createListOfProducts(){
+    public List<WebElement> createListOfProducts() {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[@data-qaid='buy-button']")));
         recommendedProducts = driver.findElements(By.xpath("//a[@data-qaid='buy-button']"));
         return recommendedProducts;
     }
+
     @Step("Scroll to product by index")
-    public void scrollToProduct(int index, List<WebElement> list){
+    public void scrollToProduct(int index, List<WebElement> list) {
         Actions actions = new Actions(driver);
         actions.scrollToElement(list.get(index)).perform();
     }
@@ -102,5 +108,16 @@ public class HomePage extends BasePage {
         WebElement titleProduct = driver.findElement(By.xpath("(//div[@class='M3v0L -pUjB VrlHh']/a)[1]"));
         wait.until(ExpectedConditions.visibilityOf(titleProduct)).click();
     }
+
+    @Step("Enter value in the search field")
+    public void enterValue(String value) {
+        searchField = driver.findElement(By.name("search_term"));
+        searchField.click();
+        searchField.sendKeys(value);
+        searchField.submit();
+
+    }
+
 }
+
 
