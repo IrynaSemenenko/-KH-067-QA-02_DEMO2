@@ -24,7 +24,6 @@ public class HomePage extends BasePage {
     By menuProductsLocator = By.xpath("//*[@data-qaid='menu_preview']");
     By seasonFeedLocator = By.xpath("//*[@data-qaid='menu_parent']");
 
-
     public HomePage(WebDriver driver) {
         super(driver);
     }
