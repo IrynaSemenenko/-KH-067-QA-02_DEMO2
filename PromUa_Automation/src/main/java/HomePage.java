@@ -16,6 +16,7 @@ public class HomePage extends BasePage {
     WebElement favoriteButton;
     WebElement product;
     WebElement titleForYou;
+    WebElement searchField;
 
     By searchButtonLocator = By.xpath("//*[@data-qaid='search_btn']");
     By ruLanguageLocator = By.xpath("//*[@data-qaid='ru_lang']");
@@ -104,5 +105,15 @@ public class HomePage extends BasePage {
         WebElement titleProduct = driver.findElement(By.xpath("(//div[@class='M3v0L -pUjB VrlHh']/a)[1]"));
         wait.until(ExpectedConditions.visibilityOf(titleProduct)).click();
     }
+    @Step("Enter value in the search field")
+    public void enterValue(String value) {
+        searchField = driver.findElement(By.name("search_term"));
+        searchField.click();
+        searchField.sendKeys(value);
+        searchField.submit();
+
+    }
+
 }
+
 
