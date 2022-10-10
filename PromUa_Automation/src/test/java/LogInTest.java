@@ -12,7 +12,7 @@ public class LogInTest extends BaseTest {
     @Test
     public void logInButtonPresenceRus() {
         homePage = new HomePage(driver);
-        homePage.clickLanguageButton(homePage.ruLanguageLocator);
+       homePage.getHeaderFragment().clickRuButton();
         Assert.assertEquals(homePage.getHeaderFragment().getTextSignInButton(), "Войти");
     }
 
@@ -20,8 +20,8 @@ public class LogInTest extends BaseTest {
     @Test
     public void logInButtonPresenceUa() {
         homePage = new HomePage(driver);
-        homePage.clickLanguageButton(homePage.ruLanguageLocator);
-        homePage.clickLanguageButton(homePage.uaLanguageLocator);
+        homePage.getHeaderFragment().clickRuButton();
+        homePage.getHeaderFragment().clickUaButton();
         Assert.assertEquals(homePage.getHeaderFragment().getTextSignInButton(), "Увійти");
     }
 
