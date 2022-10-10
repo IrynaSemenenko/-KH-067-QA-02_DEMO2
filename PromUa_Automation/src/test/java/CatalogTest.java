@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 public class CatalogTest extends BaseTest{
     HomePage homePage;
     CatalogFragment catalogFragment;
-    @Description("Ñheck that the Catalog categories can be opened")
+    @Description("Check that the Catalog categories can be opened")
     @Test
     public void catalogCategoriesTest(){
         homePage = new HomePage(driver);
@@ -18,7 +18,7 @@ public class CatalogTest extends BaseTest{
         String expectedUrl = "https://prom.ua/ua/Maski-dlya-kozhi-litsa";
         Assert.assertEquals(actualUrl, expectedUrl);
     }
-    @Description("Ñheck that the Catalog Popup menu opened from the Catalog button can be scrolled down")
+    @Description("Check that the Catalog Popup menu opened from the Catalog button can be scrolled down")
     @Test
     public void catalogPopupFromButtonScrollTest(){
         homePage = new HomePage(driver);
@@ -31,7 +31,7 @@ public class CatalogTest extends BaseTest{
         String expectedUrl = "https://prom.ua/ua/kabanchik";
         Assert.assertEquals(actualUrl, expectedUrl);
     }
-    @Description("Ñheck that the Catalog Popup menu opened from the Home Page can be scrolled down")
+    @Description("Check that the Catalog Popup menu opened from the Home Page can be scrolled down")
     @Test
     public void catalogPopupFromHomePageScroll(){
         homePage = new HomePage(driver);
