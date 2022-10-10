@@ -6,7 +6,7 @@ public class FooterTest extends BaseTest {
     HomePage homePage;
     GooglePage googlePage;
 
-    @Description("Check that buyers support button leads to page with popular questions for sellers")
+    @Description("Check that 'Довідка для покупців' link leads to page with popular questions for buyers")
     @Test
     public void goToBuyersHelpLink() {
         homePage = new HomePage(driver);
@@ -16,7 +16,7 @@ public class FooterTest extends BaseTest {
         Assert.assertEquals(actualUrl, expectedUrl);
     }
 
-    @Description("Check that seller support button leads to page with popular questions for sellers")
+    @Description("Check that 'Довідка для продавців' link leads to page with popular questions for sellers")
     @Test
     public void goToSellersHelpLink() {
         homePage = new HomePage(driver);
@@ -26,7 +26,7 @@ public class FooterTest extends BaseTest {
         Assert.assertEquals(actualUrl, expectedUrl);
     }
 
-    @Description("Check that tariffs button leads to page with tariffs")
+    @Description("Check that tariffs link leads to page with tariffs")
     @Test
     public void goToTariffsLink() {
         homePage = new HomePage(driver);
