@@ -45,11 +45,11 @@ public class HeaderFragment extends BasePage {
         promoPanel = driver.findElement(By.xpath("//div[@data-qaid='promo_panel']"));
         wait.until(ExpectedConditions.elementToBeClickable(promoPanel)).click();
     }
-
-    @Step("Click shopping cart button")
+    @Step("Click shopping cart button on the home page")
     public void clickShoppingCartButton() {
         shoppingCartButton = driver.findElement(By.xpath("//button[@data-qaid='shopping_cart']"));
         wait.until(ExpectedConditions.elementToBeClickable(shoppingCartButton));
+        shoppingCartButton.click();
     }
 }
 
