@@ -16,30 +16,33 @@ public class HeaderFragment extends BasePage {
         super(driver);
     }
 
+    @Step("Click favorite button")
     public void clickFavoriteButton() {
         favoriteButton = driver.findElement(By.xpath("//button[@data-qaid='favorite_cabinet_button']"));
-        wait.until(ExpectedConditions.elementToBeClickable(favoriteButton))
-                .click();
+        wait.until(ExpectedConditions.elementToBeClickable(favoriteButton)).click();
     }
 
+    @Step("Click sign in button")
     public void clickSingInButton() {
         singInButton = driver.findElement(By.xpath("//button[@data-qaid='sign-in']"));
         wait.until(ExpectedConditions.visibilityOf(singInButton)).click();
     }
 
+    @Step("Click help button")
     public void clickHelpButton() {
         helpButton = driver.findElement(By.xpath("//div/a[contains(@href, 'help.prom.ua')]"));
         wait.until(ExpectedConditions.elementToBeClickable(helpButton)).click();
     }
 
+    @Step("Get attribute of MyProm button")
     public String getAttributeMyPromButton() {
-        myPromButton = driver.findElement(By.xpath("//*[@id='page-block']/div/div[2]/div/div/div[2]/div[2]"));
+        myPromButton = driver.findElement(By.xpath("//button[@data-qaid='menu_btn']"));
         return wait.until(ExpectedConditions.elementToBeClickable(myPromButton)).getAttribute(("href"));
     }
 
+    @Step("Click promo panel")
     public void clickPromoPanel() {
-
-        promoPanel = driver.findElement(By.xpath("//*[@id='page-block']/div/div[1]"));
+        promoPanel = driver.findElement(By.xpath("//div[@data-qaid='promo_panel']"));
         wait.until(ExpectedConditions.elementToBeClickable(promoPanel)).click();
     }
     @Step("Click shopping cart button on the home page")
