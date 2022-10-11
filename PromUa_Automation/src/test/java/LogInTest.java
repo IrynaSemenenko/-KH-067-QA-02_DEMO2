@@ -14,7 +14,7 @@ public class LogInTest extends BaseTest {
     public void logInButtonPresenceRus() {
         homePage = new HomePage(driver);
         homePage.getHeaderFragment().clickRuButton();
-        Assert.assertEquals(homePage.getHeaderFragment().getTextSignInButton(), "Войти");
+        Assert.assertEquals(driver.getCurrentUrl(), "https://prom.ua/");
     }
 
     @Description("Check that  'Увійти' button  is displayed on the  Ukrainian version of the website")
