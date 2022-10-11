@@ -1,6 +1,4 @@
 import io.qameta.allure.Description;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -12,7 +10,7 @@ public class LogInTest extends BaseTest {
     @Test
     public void logInButtonPresenceRus() {
         homePage = new HomePage(driver);
-       homePage.getHeaderFragment().clickRuButton();
+        homePage.getHeaderFragment().clickRuButton();
         Assert.assertEquals(homePage.getHeaderFragment().getTextSignInButton(), "Войти");
     }
 
