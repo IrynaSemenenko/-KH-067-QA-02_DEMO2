@@ -31,7 +31,7 @@ public class ShoppingCartTest extends BaseTest {
         Assert.assertTrue(shoppingCartPage.decreaseProductAmountButton.isEnabled());
     }
 
-    @Description("Check return 1 piece amount of product after input 0 in the shopping cart")
+    @Description("Check return '1' after input '0' into amount of product field")
     @Test
     public void checkZeroInputAmountField() {
         homePage = new HomePage(driver);
