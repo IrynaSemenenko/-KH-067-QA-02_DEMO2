@@ -95,7 +95,7 @@ public class AccountPage extends BasePage {
 
     @Step("Verify that settings saved message is present")
     public boolean verifySettingsSavedMessageIsPresent() {
-        settingsSavedMessage = driver.findElement(By.xpath("//p[text()='Налаштування профілю успішно збережені']"));
+        settingsSavedMessage = driver.findElement(By.xpath("//p[text()='Настройки профиля успешно сохранены']"));
         return wait.until(ExpectedConditions.visibilityOf(settingsSavedMessage)).isDisplayed();
     }
 }

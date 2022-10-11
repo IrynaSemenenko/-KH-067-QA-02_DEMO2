@@ -1,3 +1,5 @@
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -8,6 +10,7 @@ public class ChatTest extends BaseTest {
     HomePage homePage;
 
     @Description("Check that if archived chats list is empty the message appears")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void checkArchiveButton() {
         homePage = new HomePage(driver);

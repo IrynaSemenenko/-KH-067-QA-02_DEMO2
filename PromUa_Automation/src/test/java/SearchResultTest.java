@@ -1,4 +1,6 @@
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -6,6 +8,7 @@ public class SearchResultTest extends BaseTest {
     HomePage homePage;
 
     @Description("Check that during detailed search the search results are display relevant product cards with pictures, names and prices")
+    @Severity(SeverityLevel.NORMAL)
     @Test
     public void searchTest() {
         homePage = new HomePage(driver);
@@ -16,6 +19,7 @@ public class SearchResultTest extends BaseTest {
     }
 
     @Description("Check search options with wrong keyboard layout")
+    @Severity(SeverityLevel.NORMAL)
     @Test
     public void searchWrongTest() {
         homePage = new HomePage(driver);

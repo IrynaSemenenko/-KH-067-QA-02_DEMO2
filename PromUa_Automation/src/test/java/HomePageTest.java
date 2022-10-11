@@ -1,3 +1,5 @@
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import jdk.jfr.Description;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,6 +10,7 @@ import org.testng.annotations.Test;
 public class HomePageTest extends BaseTest {
     HomePage homePage;
     @Description("Check that component 'Знайти' is presented on Ukrainian version and component 'Найти' is presented on Russian version")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void searchButtonOnMainPage() {
         homePage = new HomePage(driver);
@@ -23,18 +26,21 @@ public class HomePageTest extends BaseTest {
         Assert.assertEquals(searchButton.getText(), "Найти");
     }
     @Description("Check that 'Каталог товаров' component is presented on the main page")
+    @Severity(SeverityLevel.NORMAL)
     @Test
     public void menuProductsOnMainPage() {
         homePage = new HomePage(driver);
         Assert.assertTrue(homePage.menuProductsOnMainPageIsDisplayed());
     }
     @Description("Check that 'Сейчас покупают' component is presented on the main page")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void seasonFeedOnMainPage() {
         homePage = new HomePage(driver);
         Assert.assertTrue(homePage.seasonFeedOnMainPageIsDisplayed());
     }
     @Description("Check that 'Спеціально для вас' component is presented on the main page")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void forYouOnMainPage() {
         homePage = new HomePage(driver);

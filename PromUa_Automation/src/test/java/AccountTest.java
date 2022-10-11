@@ -1,4 +1,6 @@
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -8,6 +10,7 @@ public class AccountTest extends BaseTest{
     AccountPage accountPage;
 
     @Description("Verify that password can be shown/encrypted by eye icon.")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void checkPasswordEncryption() {
         homePage = new HomePage(driver);
@@ -27,6 +30,7 @@ public class AccountTest extends BaseTest{
     }
 
     @Description("Verify that confirmation message is present after saving data.")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void checkConfirmationMessage() {
         homePage = new HomePage(driver);
