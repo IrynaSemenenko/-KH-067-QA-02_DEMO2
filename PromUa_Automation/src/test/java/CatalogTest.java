@@ -1,4 +1,6 @@
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -6,6 +8,7 @@ public class CatalogTest extends BaseTest{
     HomePage homePage;
     CatalogFragment catalogFragment;
     @Description("Check that the Catalog categories can be opened")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void catalogCategoriesTest(){
         homePage = new HomePage(driver);
@@ -19,6 +22,7 @@ public class CatalogTest extends BaseTest{
         Assert.assertEquals(actualUrl, expectedUrl);
     }
     @Description("Check that the Catalog Popup menu opened from the Catalog button can be scrolled down")
+    @Severity(SeverityLevel.NORMAL)
     @Test
     public void catalogPopupFromButtonScrollTest(){
         homePage = new HomePage(driver);
@@ -32,6 +36,7 @@ public class CatalogTest extends BaseTest{
         Assert.assertEquals(actualUrl, expectedUrl);
     }
     @Description("Check that the Catalog Popup menu opened from the Home Page can be scrolled down")
+    @Severity(SeverityLevel.NORMAL)
     @Test
     public void catalogPopupFromHomePageScroll(){
         homePage = new HomePage(driver);

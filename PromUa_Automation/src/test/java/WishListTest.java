@@ -1,4 +1,6 @@
 import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -10,6 +12,7 @@ public class WishListTest extends BaseTest {
     HomePage homePage;
 
     @Description("Check that user can go to wishlist using the favorite button in the header as an unregistered user")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void goToWishlist() {
         homePage = new HomePage(driver);
@@ -21,6 +24,7 @@ public class WishListTest extends BaseTest {
     }
 
     @Description("Check that the 'heart' icon in the header is displayed the correct numeric indicator of added items")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void addProductsToWishlist() {
         homePage = new HomePage(driver);
@@ -36,6 +40,7 @@ public class WishListTest extends BaseTest {
     }
 
     @Description("Check that click on the 'За покупками' in the empty 'Бажане' page redirects to the main page")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void shoppingButtonInWishList() {
         homePage = new HomePage(driver);
