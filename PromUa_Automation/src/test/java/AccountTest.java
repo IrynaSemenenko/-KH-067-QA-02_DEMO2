@@ -1,4 +1,5 @@
 import io.qameta.allure.Description;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AccountTest extends BaseTest{
