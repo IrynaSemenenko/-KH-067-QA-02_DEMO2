@@ -32,8 +32,7 @@ public class ShoppingCartTest extends BaseTest {
         homePage.clickOnFirstRecommendedProduct();
         homePage.getHeaderFragment().clickShoppingCartButton();
         shoppingCartPage.increaseProductAmount();
-        Assert.assertTrue(shoppingCartPage.decreaseProductAmountButton.isEnabled());
-    }
+        Assert.assertTrue(shoppingCartPage.decreaseProductAmountButton.isEnabled());}
 
     @Description("Check return '1' after input '0' into amount of product field")
     @Severity(SeverityLevel.MINOR)
@@ -44,8 +43,7 @@ public class ShoppingCartTest extends BaseTest {
         homePage.scrollToRecommendation();
         homePage.clickOnFirstRecommendedProduct();
         shoppingCartPage.changeAmountToZero();
-        Assert.assertEquals(shoppingCartPage.changeAmountField.getAttribute("value"), "1");
-    }
+        Assert.assertEquals(shoppingCartPage.changeAmountField.getAttribute("value"), "1");}
 
     @Description("Check appearance 'go for the shopping' button after delete products from the shopping cart ")
     @Severity(SeverityLevel.NORMAL)
@@ -57,16 +55,14 @@ public class ShoppingCartTest extends BaseTest {
         for (int i = 0; i < 3; i++) {
             homePage.createListOfProducts().get(i).click();
             if (i < 2) {
-                shoppingCartPage.clickExitButton();
-            }
+                shoppingCartPage.clickExitButton();}
         }
         for (WebElement list : shoppingCartPage.createListOfDeleteButtons()) {
             list.click();
         }
         shoppingCartPage.forTheShopping = driver.findElement
                 (By.xpath("//button[@data-testid='return_to_shopping_btn']"));
-        Assert.assertTrue(shoppingCartPage.forTheShopping.isEnabled());
-    }
+        Assert.assertTrue(shoppingCartPage.forTheShopping.isEnabled());}
 
     @Description("Check wholesale option button")
     @Severity(SeverityLevel.NORMAL)
