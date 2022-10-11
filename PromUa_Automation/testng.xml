@@ -3,24 +3,9 @@
 <suite name="PromUa" verbose="1">
     <test name="SmokeTest">
         <classes>
-            <class name="LogInTest">
-                <methods>
-                    <include name="authorizationUser"/>
-                </methods>
-            </class>
-            <class name="AccountTest">
-                <methods>
-                    <include name="checkPasswordEncryption"/>
-                </methods>
-            </class>
             <class name="CatalogTest">
                 <methods>
                     <include name="catalogCategoriesTest"/>
-                </methods>
-            </class>
-            <class name="HeaderTest">
-                <methods>
-                    <include name="checkMyPromButton"/>
                 </methods>
             </class>
             <class name="WishListTest">
