@@ -64,13 +64,13 @@ public class HeaderFragment extends BasePage {
     @Step("Click on the 'ru' Button")
     public void clickRuButton() {
         ruLanguageButton = driver.findElement(By.xpath("//*[@data-qaid='ru_lang']"));
-        wait.until(ExpectedConditions.elementToBeClickable(ruLanguageButton)).click();
+        wait.until(ExpectedConditions.visibilityOf(ruLanguageButton)).click();
     }
 
     @Step("Click on the 'UA' Button")
     public void clickUaButton() {
         uaLanguageButton = driver.findElement(By.xpath("//*[@data-qaid='ua_lang']"));
-        wait.until(ExpectedConditions.elementToBeClickable(uaLanguageButton)).click();
+        wait.until(ExpectedConditions.visibilityOf(uaLanguageButton)).click();
     }
 }
 

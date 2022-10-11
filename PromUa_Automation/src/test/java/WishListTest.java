@@ -43,7 +43,6 @@ public class WishListTest extends BaseTest {
         loginPage = new LoginPage(driver);
         loginPage.authorization("irinabublik039@gmail.com", "Ib(0992163097)");
         wishListPage = new WishListPage(driver);
-        wishListPage.nameWishListPageIsDisplayed();
         wishListPage.clickShoppingButton();
         ArrayList<String> tabs = new ArrayList<>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));

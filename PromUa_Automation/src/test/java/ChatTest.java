@@ -7,9 +7,9 @@ public class ChatTest extends BaseTest {
     LoginPage loginPage;
     HomePage homePage;
 
-    @Description("Check that MyProm button leads to the personal account page")
+    @Description("Check that if archived chats list is empty the message appears")
     @Test
-    public void checkMyPromButton() {
+    public void checkArchiveButton() {
         homePage = new HomePage(driver);
         homePage.getChatFragment().clickChatButton();
         loginPage = new LoginPage(driver);
@@ -18,5 +18,4 @@ public class ChatTest extends BaseTest {
         homePage.getChatFragment().clickArchivedChats();
         Assert.assertTrue(homePage.getChatFragment().archivedChatListIsDisplayed());
     }
-
 }
