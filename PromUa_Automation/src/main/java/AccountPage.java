@@ -23,7 +23,7 @@ public class AccountPage extends BasePage {
 
     @Step("Click profile settings button")
     public void clickProfileSettingsButton() {
-        profileSettingsButton = driver.findElement(By.xpath("//a[@href='/uk/cabinet/user/settings']"));
+        profileSettingsButton = driver.findElement(By.xpath("//a[@href='/cabinet/user/settings']"));
         wait.until(ExpectedConditions.elementToBeClickable(profileSettingsButton))
                 .click();
     }

@@ -1,11 +1,53 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
 
-<suite name="WishlistSuit" verbose="1">
-    <test name="Regression">
+<suite name="PromUa" verbose="1">
+    <test name="SmokeTest">
         <classes>
-            <class name="WishListTest"/>
-            <class name="FooterTest"/>
-
+            <class name="LogInTest">
+                <methods>
+                    <include name="authorizationUser"/>
+                </methods>
+            </class>
+            <class name="AccountTest">
+                <methods>
+                    <include name="checkPasswordEncryption"/>
+                </methods>
+            </class>
+            <class name="CatalogTest">
+                <methods>
+                    <include name="catalogCategoriesTest"/>
+                </methods>
+            </class>
+            <class name="HeaderTest">
+                <methods>
+                    <include name="checkMyPromButton"/>
+                </methods>
+            </class>
+            <class name="WishListTest">
+                <methods>
+                    <include name="goToWishlist"/>
+                </methods>
+            </class>
+            <class name="HomePageTest">
+                <methods>
+                    <include name="menuProductsOnMainPage"/>
+                </methods>
+            </class>
+            <class name="SearchResultTest">
+                <methods>
+                    <include name="searchTest"/>
+                </methods>
+            </class>
+            <class name="ProductPageTest">
+                <methods>
+                    <include name="checkButtonAllDescription"/>
+                </methods>
+            </class>
+            <class name="ShoppingCartTest">
+                <methods>
+                    <include name="testReturnToShoppingButton"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
